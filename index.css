@@ -1,0 +1,112 @@
+:root {
+  --border: 0.03rem solid #777;
+  --table-spacing: 0.6rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Roboto', sans-serif;
+  color: #111;
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  width: inherit;
+}
+
+input {
+  border: none;
+  padding: 0;
+  font-size: 100%;
+  font-family: unset;
+}
+
+/* header */
+
+header {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 1rem;
+  margin: 0 var(--table-spacing);
+  margin-bottom: 1rem;
+  border-bottom: var(--border);
+}
+
+#month-name {
+  flex: 1;
+  font-size: 2.4rem;
+  font-weight: 300;
+  min-width: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.04rem;
+}
+
+#header-text {
+  flex: 1;
+  text-align: right;
+  font-size: 1.3rem;
+}
+
+#inputs {
+  padding-left: 1rem;
+}
+
+#first-day-input {
+  width: 3rem;
+}
+
+/* calendar */
+
+main {
+  flex: 1;
+}
+
+#calendar {
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+  border-spacing: var(--table-spacing);
+}
+
+#calendar th, #calendar td {
+  width: calc(100% / 7);
+  text-align: left;
+  padding: 0.8rem;
+}
+
+#calendar th {
+  height: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#calendar td:not(:empty) {
+  border: var(--border);
+  min-height: 4rem;
+  font-size: 1.3rem;
+  font-weight: 300;
+  vertical-align: top;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+
+@media screen {
+  #page {
+    padding: 3rem;
+  }
+}

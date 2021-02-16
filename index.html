@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="index.css" />
+    <title>Calendar</title>
+  </head>
+  <body>
+    <div id="page">
+      <header>
+        <span contenteditable type="text" id="month-name">(month)</span>
+        <span contenteditable id="header-text"></span>
+        <div class="no-print" class="inputs">
+          <input type="date" id="date-input">
+          <input type="number" id="first-day-input" value="1">
+          <input type="text" id="locale-input" value="default" placeholder="e.g. de-AT">
+        </div>
+      </header>
+      <main>
+        <table id="calendar">
+          <thead id="calendar-head"></thead>
+          <tbody id="calendar-body"></tbody>
+        </table>
+      </main>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
