@@ -1,6 +1,7 @@
 :root {
   --border: 0.03rem solid #777;
   --table-spacing: 0.6rem;
+  --letter-spacing: 0.1rem;
 }
 
 * {
@@ -14,6 +15,12 @@ body {
   width: 100vw;
   font-family: 'Roboto', sans-serif;
   color: #111;
+}
+
+.small-bold, #calendar th, #year {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing);
 }
 
 #page {
@@ -60,24 +67,28 @@ body {
 
 #page > header {
   display: flex;
-  align-items: flex-end;
+  align-items: baseline;
   padding-bottom: 1rem;
   border-bottom: var(--border);
+  vertical-align: bottom;
 }
 
 #month-name {
-  flex: 1;
   font-size: 2.4rem;
   font-weight: 300;
   min-width: auto;
   text-transform: uppercase;
-  letter-spacing: 0.04rem;
+  letter-spacing: var(--letter-spacing);
+}
+
+#year {
+  margin-left: 1rem;
 }
 
 #header-text {
   flex: 1;
   text-align: right;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 #first-day-input {
@@ -108,9 +119,6 @@ body {
 #calendar th {
   height: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.15rem;
-  font-size: 1.2rem;
-  font-weight: 500;
 }
 
 #calendar td:not(:empty) {
