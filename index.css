@@ -23,21 +23,45 @@ body {
   width: inherit;
 }
 
-input {
-  border: none;
-  padding: 0;
-  font-size: 100%;
-  font-family: unset;
+#page > * {
+  margin: 0 var(--table-spacing);
+}
+
+#page > nav {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+#page > nav label {
+  display: flex;
+  align-items: stretch;
+  margin-right: 0.5rem;
+}
+
+#page > nav label span {
+  display: flex;
+  align-items: center;
+  margin-right: 0.3rem;
+}
+
+#page > nav {
+  display: none;
+  padding-top: 1rem;
+}
+
+#page > header:hover + nav,
+#page > header:focus-within + nav,
+#page > nav:hover,
+#page > nav:focus-within {
+  display: flex;
 }
 
 /* header */
 
-header {
+#page > header {
   display: flex;
   align-items: flex-end;
   padding-bottom: 1rem;
-  margin: 0 var(--table-spacing);
-  margin-bottom: 1rem;
   border-bottom: var(--border);
 }
 
@@ -56,18 +80,16 @@ header {
   font-size: 1.3rem;
 }
 
-#inputs {
-  padding-left: 1rem;
-}
-
 #first-day-input {
   width: 3rem;
 }
 
 /* calendar */
 
-main {
+#page > main {
   flex: 1;
+  margin: 0;
+  margin-top: 1rem;
 }
 
 #calendar {

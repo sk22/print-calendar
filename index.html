@@ -13,12 +13,21 @@
       <header>
         <span contenteditable type="text" id="month-name">(month)</span>
         <span contenteditable id="header-text"></span>
-        <div class="no-print" class="inputs">
-          <input type="date" id="date-input">
-          <input type="number" id="first-day-input" value="1">
-          <input type="text" id="locale-input" value="default" placeholder="e.g. de-AT">
-        </div>
       </header>
+      <nav class="no-print">
+        <label>
+          <span>month:</span>
+          <input type="date" id="date-input">
+        </label>
+        <label>
+          <span>start of the week:</span>
+          <input type="number" id="first-day-input" value="1">
+        </label>
+        <label>
+          <span>locale:</span>
+          <input type="text" id="locale-input" value="default" placeholder="e.g. de-AT">
+        </label>
+      </nav>
       <main>
         <table id="calendar">
           <thead id="calendar-head"></thead>
