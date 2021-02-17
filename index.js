@@ -1,4 +1,5 @@
 const monthNameElement = document.getElementById('month-name')
+const yearElement = document.getElementById('year')
 const dateInput = document.getElementById('date-input')
 const calendarTable = document.getElementById('calendar')
 const calendarHead = document.getElementById('calendar-head')
@@ -36,6 +37,7 @@ function generateHeaderRow(firstWeekday, firstDate) {
     const dayName = date.toLocaleString(localeInput.value, { weekday: 'short' })
     const th = document.createElement('th')
     th.innerText = dayName
+    th.contentEditable = true
     tr.appendChild(th)
     date.setDate(date.getDate() + 1)
   }
@@ -47,6 +49,7 @@ function generateWeekRow(startOfWeek, firstDate, lastDate) {
 
   for (let weekday = 0; weekday < 7; weekday++) {
     const td = document.createElement('td')
+    // td.contentEditable = true
     tr.appendChild(td)
     const date = new Date(startOfWeek)
     date.setDate(startOfWeek.getDate() + weekday)
@@ -90,7 +93,9 @@ function clearCalendar() {
 function updateCalendar() {
   const date = dateInput.valueAsDate || resetDate()
   const monthName = date.toLocaleString(localeInput.value, { month: 'long' })
+  const year = date.getFullYear()
   monthNameElement.innerText = monthName
+  yearElement.innerText = year
 
   const firstDate = new Date(date.getFullYear(), date.getMonth(), 1)
   const lastDate = new Date(date.getFullYear(), date.getMonth() + 1, 0)
