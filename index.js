@@ -6,9 +6,13 @@ const calendarBody = document.getElementById('calendar-body')
 const firstDayInput = document.getElementById('first-day-input')
 const localeInput = document.getElementById('locale-input')
 
+function setDateInput(date) {
+  dateInput.value = date.toISOString().split('T')[0]
+}
+
 function resetDate() {
   const date = new Date()
-  dateInput.valueAsDate = date
+  setDateInput(date)
   return date
 }
 
@@ -96,9 +100,11 @@ function updateCalendar() {
   generateCalendar(firstDate, lastDate, firstWeekday)
 }
 
-const inputs = [dateInput, firstDayInput, localeInput]
-dateInput.valueAsDate = new Date()
+// yyyy-mm-dd
+setDateInput(new Date())
 localeInput.value = navigator.languages[0] || navigator.language
+
+const inputs = [dateInput, firstDayInput, localeInput]
 inputs.forEach(input => {
   input.addEventListener('change', updateCalendar)
 })
